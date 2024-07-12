@@ -1,4 +1,4 @@
-def printResult(scores, total):
+def printResult(scores,  total):
     n = len(scores)
     print(total)
     print(scores)
