@@ -1,5 +1,5 @@
 import pandas as pd
-import mariadb
+import mariadb 
 
 conn = mariadb.connect(
     user="user017",
