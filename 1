@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자를 문자열로 변환하고 숫자 이름들 사이에 쉼표(,)를 넣어 구분하기</title>
+</head>
+<body>
+    <script>
+        function solution(number) {
+            // 숫자를 영어로 바꾸기 위한 사전
+            const numberMap = {
+                "0": "zero",
+                "1": "one",
+                "2": "two",
+                "3": "three",
+                "4": "four",
+                "5": "five",
+                "6": "six",
+                "7": "seven",
+                "8": "eight",
+                "9": "nine"
+            };
+            
+            // 결과를 저장할 배열 (쉼표로 구분하는 거임)
+            let result = [];
+            
+            // 입력된 숫자를 문자열로 변환해서 한 글자씩 처리하기
+            let strNumber = number.toString(); // 숫자를 문자열로 변환
+            
+            for (let char of strNumber) {
+                result.push(numberMap[char]); // 숫자를 대응하는 영어 이름으로 변환하여 배열에 추가
+            }
+            
+            // 배열을 쉼표로 이어붙여서 문자열로 반환
+            return result.join(", ");
+        }
+        
+        console.log(solution(123456789)); // "one, two, three, four, five, six, seven, eight, nine"
+        console.log(solution(14067)); // "one, four, zero, six, seven"
+        
+    </script>
+</body>
+</html>
